@@ -1,10 +1,12 @@
-.button {
+.cartButton {
+    float:right;
     cursor: pointer;
     font: inherit;
+    font-size: 16px;
     border: none;
     background-color: #473c36;
     color: white;
-    padding: 0.75rem 2rem;
+    padding: 0.75rem 2rem; 
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -12,27 +14,29 @@
     font-weight: bold;
   }
   
-  .button:hover,
-  .button:active {
+  .cartButton:hover,
+  .cartButton:active {
     background-color: #452d20;
   }
   
-  .icon {
+  .cartButton svg {
     width: 1.35rem;
     height: 1.35rem;
     margin-right: 0.5rem;
+    padding-right:4px;
   }
   
-  .badge {
+  .cartButton .badge {
     background-color: #442817;
-    padding: 0.25rem 1rem;
+    padding: 2px 1rem;
     border-radius: 25px;
     margin-left: 1rem;
     font-weight: bold;
+    vertical-align: middle;
   }
   
-  .button:hover .badge,
-  .button:active .badge {
+  .cartButton:hover .badge,
+  .cartButton:active .badge {
     background-color: #ccb17c;
   }
   
@@ -56,4 +60,9 @@
     100% {
       transform: scale(1);
     }
+  }
+
+  .cartButton span{
+    vertical-align: middle;
+    height: 1.5rem;
   }

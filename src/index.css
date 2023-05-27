@@ -1,12 +1,369 @@
-* {
-    box-sizing: border-box;
+/* reset all css */
+@charset "utf-8";
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:none;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;text-decoration:none;margin:0;padding:0;}
+table{border-collapse:separate;border-spacing:0}
+blockquote:before,blockquote:after,q:before,q:after{content:""}
+*{margin:0;padding:0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block; }								  
+ol, ul { list-style: none;}
+blockquote, q { quotes: none;}
+:focus { outline: 0;}
+table { border-collapse: collapse; border-spacing: 0;}
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+a{text-decoration:none; position:relative; color:#000;}
+audio,video,canvas {max-width: 100%;}
+
+
+/*-------------Import fonts ---------------------------------------*/
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900|Cabin:400,700|Droid+Serif:400,700|Playball);
+/*-------------General Style---------------------------------------*/
+html{
+	overflow-x:hidden !important;
+	height:100%;
+}
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	color: #000;
+	background-color:#191919;
+	height:100%;
+	text-align:center;
+}
+@-o-viewport {width: device-width;}
+@-ms-viewport {width: device-width;}
+@viewport {width: device-width;}
+/*--------------Typography--------------------------------------*/
+h1 {
+	font-size: 4.46666666667em;
+	text-transform: uppercase;
+	font-weight: 400;
+	line-height: 1.17em;
+}
+h2 {
+	font-size: 3.2em;
+	font-weight: 300;
+}
+h3 {
+	font-size: 1em;
+}
+h4 {
+	font-size: 0.9em;
+	font-weight: 200;
+}
+h5 {
+	font-size: 0.8em;
+	font-weight: 200;
+}
+h6 {
+	font-size: 0.6em;
+	font-weight: 200;
+}
+p {
+	text-align:left;
+	font-size:16px;
+	line-height:24px;
+	padding-bottom:10px;
+}
+blockquote {
+	float:left;
+	padding: 10px 20px;
+	margin: 0 0 20px;
+	font-size: 17.5px;
+	border-left: 15px solid #eee;
+}
+blockquote p {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-style:italic;
+	color:#494949;
+}
+/* ---------Page preload--------------------------------------*/
+.loader {
+	position:fixed;
+	top:50% !important;
+	left:50%;
+	width:50px;
+	height:50px;
+	margin-left:-25px;
+	z-index:100;
+	font-size:12px;
+	line-height:50px;
+	color:#fff;
+}
+.loader img{
+	animation:k3d 3.5s infinite linear
+}
+@keyframes k3d {
+0% {
+  transform: rotateY(0deg);
   }
-  
-  html {
-    font-family: 'Noto Sans JP', sans-serif;
+  50% {
+    transform: rotateY(360deg);
+	opacity:0.3;
   }
-  
-  body {
-    margin: 0;
-    background-color: #3f3f3f;
+  100%{
+     transform: rotateY(0deg);
   }
+
+}
+/* ---------Content Styles--------------------------------------*/
+#main{
+	height:100%;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:2;
+	opacity:1;
+}
+#wrapper{
+	float:left;
+	position: relative;
+	z-index:2;
+	width:100%;
+	background:#fff;
+}
+.container{
+	max-width: 1224px;
+	width:92%;
+	margin:0 auto;
+	position: relative;
+	z-index:2;
+}
+.content {
+	width:100%;
+	position:relative;
+	z-index:2;
+	float:left;
+}
+.full-height {
+	height:100%;
+}
+.bg {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-size: cover;
+	background-attachment: scroll  ;
+	background-position: center  ;
+	background-repeat:repeat;
+	background-origin: content-box;
+	overflow:hidden;
+}
+.respimg {
+	width:100%;
+	height:auto;
+}
+.overlay {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:#000;
+	opacity:0.2;
+	z-index:2;
+}
+/* --------- Section's--------------------------------------*/
+section {
+	float:left;
+	width:100%;
+	position:relative;
+	padding:90px 0;
+	background:#fff;
+}
+.parallax-section {
+	padding:150px 0;
+	color:#fff;
+	overflow:hidden;
+}
+.parallax-section .overlay {
+	opacity:0.5;
+}
+.section-separator {
+	float:right;
+	width:70%;
+	height:6px;
+	background:#000;
+	margin-right:-20%;
+}
+.bg-parallax {
+	height:150%;
+	top:-25%;
+}
+.parallax-section h2 {
+	text-transform:uppercase;
+	font-weight:bold;
+	font-size:44px;
+	letter-spacing:2px;
+	padding-bottom:20px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+.parallax-section h3{
+	color:#fff;
+	font-size:34px;
+	font-family: 'Playball', cursive;
+}
+section.header-section {
+	padding:250px 0;
+	border-top:20px solid #fff;
+}
+.section-title {
+	float:left;
+	width:100%;
+	margin-bottom:20px;
+}
+.section-title h3 {
+	font-size:58px;
+	font-family: 'Playball', cursive;
+}
+.section-title h4 {
+	font-size:20px;
+	text-transform:uppercase;
+	font-weight:bold;
+	letter-spacing:1px;
+	position:relative;
+	display:inline-table;
+	padding-bottom:20px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+.decor-title:before ,  .decor-title:after {
+	content:'';
+	position:absolute;
+	top:12px;
+	/* background:url(../images/bef-af.png) no-repeat center; */
+	width:26px;
+	height:6px;
+}
+.decor-title:before {
+	left:-46px;
+}
+.section-title h4:after {
+	right:-46px;
+}
+.triangle-decor {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 100%;
+  z-index: 57;
+}
+.about-section .link {
+	margin-top:20px;
+	float:left;
+}
+.about-section .single-slider-holder {
+	margin-top:80px;
+}
+.bold-separator {
+	float:left;
+	width:100%;
+	margin:50px 0;
+	position:relative;
+}
+.bold-separator span {
+	width:6px;
+	height:6px;
+	display:inline-table;
+	background:#191919;
+	margin:0 auto;
+	border-radius:100%;
+}
+.bold-separator:before , .bold-separator:after {
+	content:'';
+	position:absolute;
+	width:10%;
+	height:1px;
+	top:2px;
+	opacity:0.3;
+}
+.bold-separator:before {
+	left:30%;
+}
+.bold-separator:after {
+	right:30%;
+}
+.parallax-section .bold-separator span {
+	background:#fff;
+}
+.align-text {
+	text-align:left;
+}
+.img-wrap {
+	position:absolute;
+	top:0;
+	right:0;
+	width:30%;
+	overflow:hidden;
+	height:100%;
+	z-index:4;
+}
+.no-border {
+	border:none !important;
+}
+.no-padding {
+	padding:0 !important;
+}
+.inner {
+	max-width:800px;
+	margin:0 auto;
+}
+.inner  p {
+	text-align:center;
+}
+.link {
+	font-size:17px;
+	padding:10px 15px;
+	display:inline-table;
+	font-weight:bold;
+	font-family: 'Playball', cursive;
+	letter-spacing:2px;
+	margin-bottom:20px;
+    transition: all 200ms linear;
+	text-transform:uppercase;
+}
+.align-link {
+	margin-top:30px;
+}
+.link:hover {
+	color:#000;
+}
+.align-link:hover {
+	color:#fff;
+}
+.section-icon {
+	width:60px;
+	height:60px;
+	line-height:60px;
+	margin:10px auto;
+	background:rgba(255,255,255,0.21);
+	border:2px solid rgba(255,255,255,0.51);
+	border-radius:100%;
+	font-size:20px;
+}
+
+/* colors */
+
+
+.nav-separator:before , .nav-separator:after , nav:after , .bold-separator:before , .bold-separator:after , #submit:hover , .to-top-holder:before , .ic__days .ic__day_state_current , .ic__days .ic__day_state_selected  , .ic__days .ic__day:hover  ,   .scroll-nav li a.actscroll:before ,  .scroll-nav ul:before, .scroll-nav ul:after , footer:after  , .hot-desc  , .content-pagination a.current-page , .content-pagination a:hover , .shopping-cart-link-count  , .quantity input.qty , .order-count   , .hero-title h4:before , .hero-title h4:after , .current-page , .pagination a:hover {
+	background:#C59D5F;
+}
+nav li  a.act-link , nav li  a:hover , .nav-social h3  , .nav-social li a:hover  , .parallax-section h3 , .section-title h3 , .team-slider h3 , #submit , .to-top , #submit-res , .link , .tooltip , .hero-link a:hover  , .to-top-holder p span , #twitter-feed li a , .twitter-holder  .customNavigation a:hover , #subscribe  .subscribe-button , .twitter-holder  .customNavigation a.twit-link   , .footer-social h3 , .footer-contacts li a:hover , .footer-social ul li a:hover , .subscribe-message i , .section-icon  , .testimonials-holder h4 a ,  .chefinfo , .team-social  li a:hover , .team-modal h5 , .popup-modal-dismiss:hover , .promotion-price , .big-number a , .testimonials-holder .customNavigation a:hover , .testimonials-slider ul li , .menu-item a:hover , .product-cats li a , .product-price a , .shopping-cart-link   , .subnav a:hover span  , .product-rating  , .product-item-price span ,  .quantity a , .product-meta span a , .tabs-menu .current a   , .order-money ,  .product-name a:hover  , .product-name , .coupon-holder button:hover , .cart-totals  button , .search-submit , .post-tags li a:hover, .tagcloud li a:hover , .post-link:hover , .slides-navigation a:hover , .post-meta i , .gallery-filters  a.gallery-filter-active , .box-item i , .fullheight-carousel-holder .customNavigation a:hover , .carousel-link-holder  h4 , #success_page p strong{
+	color:#C59D5F;
+}
+.hot-deal:before {
+	border:2px  solid #C59D5F;
+}
+.team-modal:before  , .half-circle{
+	border:4px  double #C59D5F;
+}
+ .half-circle {
+	 border:3px  solid #C59D5F;
+}
+.nice-select:after {
+	border-color: #C59D5F;
+}

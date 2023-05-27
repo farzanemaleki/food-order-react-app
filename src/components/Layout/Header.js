@@ -1,19 +1,25 @@
 import React from "react";
-import styles from "./Header.module.css";
-import logo from "../../assets/img/logo.png"
-import landingImage from "../../assets/img/homePage.jpg";
-import HeaderButton from "./HeaderButton";
+import "./Header.css";
+
+import logo from '../../images/logo.png';
+import HeaderCartButton from "./HeaderCartButton";
 
 const Header = () => {
   return (
     <>
-      <header className={styles.header}>
-      <img src={logo} alt="Royal Plate Restaurant & Catering HTML Template" />
-        <HeaderButton>Cart</HeaderButton>
+     <header>
+        <div className="header-inner">
+            <div className="container">
+            {/*          <!--logo-->            */}
+                <div className="logo-holder">
+                    <a href="index.html">
+                    <img src={logo} className="respimg logo-vis" alt="" />
+                    </a>
+                </div>
+                <HeaderCartButton />
+            </div>
+        </div>
       </header>
-      <div className={styles["main-image"]}>
-        <img src={landingImage}  alt="Royal Plate - Restaurant & Catering React App" />
-      </div>
     </>
   );
 };
