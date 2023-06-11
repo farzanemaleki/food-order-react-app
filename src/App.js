@@ -1,5 +1,6 @@
 import Header from './components/Layout/Header';
 import ParallexSection from './components/Layout/ParallaxSection';
+import Meals from './components/Meals/Meals';
 
 function App() {
   
@@ -7,8 +8,9 @@ function App() {
    <>
     <Header />
     <div id="wrapper">
-      <div class="content">
+      <div className="content">
         <ParallexSection />
+        <Meals />
       </div>
     </div>
    </>
